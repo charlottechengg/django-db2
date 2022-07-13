@@ -1,0 +1,6 @@
+django>=3.1
+drf-spectacular
+gunicorn==20.1.0
+ibm-db
+ibmcloudenv
+whitenoise==6.2.0
