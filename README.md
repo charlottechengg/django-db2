@@ -58,6 +58,7 @@ To get started building this application locally, you can either run the applica
   * `echo "alias pip3='/usr/local/bin/pip3.9'" >> ~/.bashrc`
   * `echo 'export PATH="/usr/local/opt/python@3.9/bin:$PATH"' >> ~/.bashrc`
   * `source ~/.bashrc`
+If this does not work you can also try unlink python3 and link to python3.9.
 
 #### Setting up your local environment
 To set up the project ensure you are running in a virtual environment so that the project is in a sandbox and not impacted by any other python dependencies
@@ -86,6 +87,17 @@ source venv/bin/activate
 ```bash
 sh fix-db2-mac.sh
 ```
+
+Test db2 connection
+```
+python3 db2_connect.py
+```
+
+If it still doesn't work, try fixing dyld path
+```
+export DYLD_LIBRARY_PATH=venv/lib/python3.9/site-packages/clidriver/lib:$DYLD_LIBRARY_PATH
+```
+
 
 To run your application locally, run this inside the virtualenv:
 
